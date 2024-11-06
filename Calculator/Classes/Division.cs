@@ -11,8 +11,10 @@ namespace Calculator.Classes
     {
         public double Calculate(double firstNumber, double secondNumber)
         {
+            if (firstNumber == secondNumber && firstNumber == 0)
+                throw new DivideByZeroException("Undefined(NaN), Can't divid zero by zero");
             if (secondNumber == 0)
-                throw new DivideByZeroException("Can't divid by zero");
+                throw new DivideByZeroException("Infinity(∞), Can't divid by zero");//NaN
 
             return firstNumber / secondNumber;
         }
